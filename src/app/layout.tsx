@@ -16,23 +16,21 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "My Portfolio",
-  description: "Welcome to my portfolio. Explore my projects and get in touch!"
+  description: "Welcome to my portfolio. Explore my projects and get in touch!",
 };
 
 export default function RootLayout({
   children,
-  session,
 }: {
   children: React.ReactNode;
-  session: any;
-}){
+}) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-         <SessionProvider session={session}>{children}</SessionProvider>
+        {/* SessionProvider will automatically fetch the session */}
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );
