@@ -1,20 +1,8 @@
-import HeroSection from "./components/HeroSection";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import ProjectsSection from "./components/ProjectsSection";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
-export default function Home() {
+import Home from "@/app/home/page"
+export default function page() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
-      <div className="container mt-24 mx-auto px-12 py-4">
-        <Navbar />
-        <HeroSection />
-        <About />
-        <ProjectsSection />
-        <EmailSection />
-      </div>
-      <Footer />
-    </main>
+    <div className="">
+      <Home/>
+    </div>
   );
 }
