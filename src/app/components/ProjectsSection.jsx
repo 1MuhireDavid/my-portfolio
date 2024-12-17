@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 
-const ProjectsData = [
+const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
@@ -34,47 +34,43 @@ const ProjectsData = [
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
+  const [activeTag, setActiveTag] = useState("All");
 
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
+  const handleTagChange = (tag) => {
+    setActiveTag(tag);
   };
 
-  const filteredProjects = ProjectsData.filter((project) =>
-    project.tag.includes(tag)
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(activeTag)
   );
 
   return (
-    <section id="project" className="bg-[#121212] text-white py-16 px-6">
-      <h2 className="text-center text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
-        My Projects
-      </h2>
-      <p className="text-center text-gray-400 text-lg max-w-2xl mx-auto">
-        Explore a selection of my recent projects showcasing my skills and
-        expertise in web and mobile development.
-      </p>
+    <section id="project" className="py-16 px-6 bg-gray-100 dark:bg-[#121212]">
+      {/* Section Header */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+          My Projects
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto mt-2">
+          Explore a selection of my recent projects showcasing my skills and expertise
+          in web and mobile development.
+        </p>
+      </div>
 
       {/* Tags Section */}
-      <div className="flex justify-center items-center gap-4 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
+      <div className="flex justify-center items-center gap-4 mb-8">
+        {["All", "Web", "Mobile"].map((tag) => (
+          <ProjectTag
+            key={tag}
+            onClick={() => handleTagChange(tag)}
+            name={tag}
+            isSelected={activeTag === tag}
+          />
+        ))}
       </div>
 
       {/* Projects Grid */}
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-8">
+      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
         {filteredProjects.map((project) => (
           <ProjectCard
             key={project.id}
