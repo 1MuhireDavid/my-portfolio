@@ -42,7 +42,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       setLoading(false);
       return;
     }
-
+ 
     const { error } = await stripe.confirmPayment({
       elements,
       clientSecret,
@@ -90,7 +90,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       >
         {!loading ? `Pay $${amount}` : "Processing..."}
       </button>
-    </form>
+    </form> 
   );
 };
 
