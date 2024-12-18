@@ -3,7 +3,10 @@
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 
-export default function PaymentSuccess() {
+// Fallback component during loading
+const Loading = () => <div>Loading...</div>;
+
+function PaymentSuccess() {
   const searchParams = useSearchParams();
   const amount = searchParams.get('amount');
 
@@ -23,10 +26,9 @@ export default function PaymentSuccess() {
   );
 }
 
-// Wrap PaymentSuccess with Suspense in the page component
-export function PaymentSuccessPage() {
+export default function Page() {
   return (
-    <Suspense>
+    <Suspense fallback={<Loading />}>
       <PaymentSuccess />
     </Suspense>
   );
