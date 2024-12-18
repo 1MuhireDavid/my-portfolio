@@ -1,17 +1,13 @@
-'use client'
-import * as React from 'react'
-
 type SearchParams = {
   amount: string;
 };
 
-export default function PaymentSuccess({
+export default async function PaymentSuccess({
   searchParams,
 }: {
   searchParams: SearchParams;
 }) {
-  const { amount } = React.use(searchParams);
-
+  const { amount } = await searchParams; 
     return (
       <div className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gradient-to-tr from-blue-500 to-purple-500">
         <div className="mb-10">
