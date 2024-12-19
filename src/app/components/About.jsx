@@ -51,7 +51,7 @@ const About = () => {
   ];
 
   return (
-    <section className="text-white bg-[#121212]" id="about">
+    <section className="dark:text-white dark:bg-[#121212]" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-12 px-6 xl:gap-16 sm:py-20 xl:px-20">
         {/* Image Section */}
         <div className="relative overflow-hidden rounded-lg shadow-lg">
@@ -69,7 +69,7 @@ const About = () => {
           <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
             About Me
           </h2>
-          <p className="text-base md:text-lg leading-relaxed text-gray-300">
+          <p className="text-base md:text-lg leading-relaxed dark:text-gray-300">
             I am a full-stack web developer passionate about creating
             interactive and responsive web applications. I specialize in modern
             web technologies like JavaScript, React, Node.js, PostgreSQL, and
@@ -78,7 +78,7 @@ const About = () => {
           </p>
 
           {/* Tabs Section */}
-          <div className="flex flex-row justify-start mt-8 space-x-4">
+          <div className="flex flex-row flex-wrap justify-start mt-8 space-x-4">
             {TAB_DATA.map((tabData) => (
               <TabButton
                 key={tabData.id}
@@ -92,7 +92,7 @@ const About = () => {
 
           {/* Tab Content Section */}
           <div
-            className="mt-8 p-4 rounded-lg border border-gray-700 bg-[#181818] text-gray-300 transition-all duration-500"
+            className="mt-8 p-4 rounded-lg border border-gray-700 dark:bg-[#181818] dark:text-gray-300 transition-all duration-500"
           >
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
