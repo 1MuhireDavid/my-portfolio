@@ -3,6 +3,7 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 
 const LoginPage = () => {
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 text-white shadow-md rounded-lg px-8 py-6 w-full max-w-md">

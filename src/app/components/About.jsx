@@ -78,7 +78,7 @@ const About = () => {
           </p>
 
           {/* Tabs Section */}
-          <div className="flex flex-row justify-start mt-8 space-x-4">
+          <div className="flex flex-row flex-wrap justify-start mt-8 space-x-4">
             {TAB_DATA.map((tabData) => (
               <TabButton
                 key={tabData.id}
