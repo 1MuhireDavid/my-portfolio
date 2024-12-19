@@ -4,10 +4,11 @@ import React from "react";
 import Link from "next/link";
 
 import { TypeAnimation } from "react-type-animation";
-
+import { ButtonsCard } from "./ui/tailwindcss-buttons";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 const HeroSection = () => {
   return (
-    <section className="lg:py-16 bg-gradient-to-b from-gray-900 via-black to-gray-800 relative overflow-hidden">
+    <section className="lg:py-16 lg:px-4 bg-gradient-to-b from-gray-900 via-black to-gray-800 relative overflow-hidden">
   <div className="absolute top-0 left-0 w-full h-full bg-opacity-50">
     {/* Background decorative shapes */}
     <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 opacity-20 blur-2xl"></div>
@@ -37,26 +38,19 @@ const HeroSection = () => {
           repeat={Infinity}
         />
       </h1>
-      <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        aperiam quas culpa esse ut, magni nulla officia soluta maxime
-        voluptas rem est libero iusto nisi repellendus alias? Velit, vero
-        ea!
-      </p>
+      <TextGenerateEffect duration={2} filter={false} words={`I am David Muhire, a passionate developer skilled in building responsive web and mobile applications. 
+  I specialize in creating seamless user experiences and delivering high-quality, scalable solutions. 
+  Let’s work together to bring your ideas to life!`} />
       <div className="mt-6">
-        <Link
-          href="/#contact"
-          className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-purple-500 to-pink-500 hover:scale-105 transform transition text-white"
-        >
-          Hire Me
+        <Link href="/">
+        <ButtonsCard>
+        Hire Me
+        </ButtonsCard>
         </Link>
-        <Link
-          href="/"
-          className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:scale-105 transform transition text-white mt-3"
-        >
-          <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-            Download CV
-          </span>
+        <Link href="/">
+        <ButtonsCard>
+        Download CV
+        </ButtonsCard>
         </Link>
       </div>
     </div>

@@ -1,11 +1,43 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Link from "next/link";
+import { NextResponse } from "next/server";
 
 const EmailSection = () => {
+   const [loading, setLoading] = useState(false);
+   const [form, setForm] = useState({email:"",subject:"",desc:""})
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+       event.preventDefault();
+       setLoading(true);
+       try {
+        const res = await fetch("/api/message", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.email, subject: form.subject, desc: form.desc}),
+        });
+        if (res.ok) {
+          setForm({email:"",subject:"",desc:""})
+        }
+       } catch (error:unknown) {
+        if (error instanceof Error) {
+          return new NextResponse("Error in creating feedback: " + error.message, { status: 400 });
+        }
+       }
+   
+       setLoading(false);
+     };
+
+       // Handle form input changes
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section
       className="relative py-24 px-6 bg-gradient-to-b from-[#121212] via-[#181818] to-[#1E1E1E]"
-      id="contact"
+      id="contact" 
     >
       {/* Background Accents */}
       <div className="absolute h-96 w-96 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-700 via-transparent to-transparent rounded-full blur-2xl -z-10 top-1/3 left-10"></div>
@@ -68,7 +100,7 @@ const EmailSection = () => {
 
         {/* Right Section */}
         <div className="z-10 bg-[#18191E] rounded-lg shadow-lg p-8">
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -80,6 +112,8 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 name="email"
+                onChange={handleInputChange}
+                value={form.email}
                 placeholder="you@example.com"
                 required
                 className="w-full bg-[#1E2025] border border-gray-600 text-white text-sm rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -97,6 +131,8 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 name="subject"
+                value={form.subject}
+                onChange={handleInputChange}
                 placeholder="Subject of your message"
                 required
                 className="w-full bg-[#1E2025] border border-gray-600 text-white text-sm rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -111,9 +147,11 @@ const EmailSection = () => {
                 Message
               </label>
               <textarea
-                id="message"
-                name="message"
-                rows="5"
+                id="desc"
+                name="desc"
+                value={form.desc}
+                onChange={handleInputChange}
+                rows={5}
                 placeholder="Your message here..."
                 required
                 className="w-full bg-[#1E2025] border border-gray-600 text-white text-sm rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -124,7 +162,7 @@ const EmailSection = () => {
               type="submit"
               className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold text-sm py-3 rounded-lg shadow-md focus:ring-2 focus:ring-purple-400 transition duration-300"
             >
-              Send Message
+               {!loading ? `Send your email` : "Processing..."}
             </button>
           </form>
         </div>

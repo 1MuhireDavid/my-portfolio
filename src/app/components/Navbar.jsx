@@ -46,7 +46,7 @@ const Navbar = () => {
             </button>
           ) : (
             <button
-              onClick={() => (window.location.href = '/login')}
+              onClick={() => (window.location.href = "/login")}
               className="text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
             >
               Login
@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden relative">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
             className="text-white focus:outline-none"
@@ -66,46 +66,51 @@ const Navbar = () => {
               <Bars3Icon className="h-8 w-8" />
             )}
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu Overlay */}
-      {navbarOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-[#121212] bg-opacity-95 flex flex-col items-center justify-center space-y-6">
-          {navLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.path}
-              className="text-white text-2xl font-semibold hover:text-pink-400 transition-colors duration-300"
-              onClick={() => setNavbarOpen(false)}
-            >
-              {link.title}
-            </Link>
-          ))}
-          {/* Login/Logout Button for Mobile */}
-          {session ? (
-            <button
-              onClick={() => {
-                signOut();
-                setNavbarOpen(false);
-              }}
-              className="text-lg font-medium bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text hover:opacity-80"
-            >
-              Logout
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                (window.location.href = '/login');
-                setNavbarOpen(false);
-              }}
-              className="text-white text-2xl font-semibold hover:text-pink-400 transition-colors duration-300"
-            >
-              Login
-            </button>
+          {/* Mobile Menu Dropdown */}
+          {navbarOpen && (
+            <div className="absolute right-0 top-full mt-2 w-48 bg-[#121212] rounded-md shadow-lg">
+              <ul className="flex flex-col space-y-2 p-4">
+                {navLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.path}
+                      className="block text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+                      onClick={() => setNavbarOpen(false)}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  {/* Login/Logout Button for Mobile */}
+                  {session ? (
+                    <button
+                      onClick={() => {
+                        signOut();
+                        setNavbarOpen(false);
+                      }}
+                      className="w-full text-left text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+                    >
+                      Logout
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        (window.location.href = "/login");
+                        setNavbarOpen(false);
+                      }}
+                      className="w-full text-left text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+                    >
+                      Login
+                    </button>
+                  )}
+                </li>
+              </ul>
+            </div>
           )}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
