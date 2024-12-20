@@ -1,7 +1,7 @@
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
+ 
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
   return (
     <div className="hover:skew-y-3 transform transition-transform duration-300 light: border">
