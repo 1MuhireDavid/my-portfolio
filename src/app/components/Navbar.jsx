@@ -9,6 +9,7 @@ const navLinks = [
   { title: "About", path: "#about" },
   { title: "Projects", path: "#project" },
   { title: "Contact", path: "#contact" },
+  { title: "Buyme Coffee", path: "/pay" },
 ];
 
 const Navbar = () => {

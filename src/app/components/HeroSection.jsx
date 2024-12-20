@@ -60,9 +60,9 @@ const HeroSection = () => {
         </div>
 
         {/* Image Content */}
-        <div className="col-span-4 place-self-center mt-8 lg:mt-0 sm:ml-10">
+        <div className="place-items-center col-span-4 mt-8 lg:mt-0">
           <div className="relative w-[250px] h-[300px] lg:w-[400px] lg:h-[400px]">
-            <div className="w-full h-full bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 dark:from-purple-600 dark:via-pink-600 dark:to-red-600 rounded-full shadow-2xl flex items-center justify-center">
+            <div className="w-full h-full bg-gradient-to-tr from-purple-500 via-pink-500 to-red-500 dark:from-purple-600 dark:via-pink-600 dark:to-red-600 rounded-full shadow-2xl flex items-center justify-center ml-12 lg:ml-0">
               <Image
                 src="/images/hero-image.png"
                 alt="David Muhire Hero"
