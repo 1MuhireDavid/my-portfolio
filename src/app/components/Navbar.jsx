@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useSession, signOut } from "next-auth/react";
+import DarkModeToggle from "./DarkModeToggle"; // Import the toggle component
 
 const navLinks = [
   { title: "About", path: "#about" },
@@ -15,7 +16,7 @@ const Navbar = () => {
   const { data: session } = useSession();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-90 shadow-lg backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-20 dark:bg-[#121212] bg-opacity-90 shadow-lg backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link
@@ -26,12 +27,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link, index) => (
             <Link
               key={index}
               href={link.path}
-              className="text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+              className="dark:text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
             >
               {link.title}
             </Link>
@@ -40,25 +41,27 @@ const Navbar = () => {
           {session ? (
             <button
               onClick={() => signOut()}
-              className="text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+              className="dark:text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
             >
               Logout
             </button>
           ) : (
             <button
               onClick={() => (window.location.href = "/login")}
-              className="text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
+              className="dark:text-white text-lg font-medium hover:text-pink-400 transition-colors duration-300"
             >
               Login
             </button>
           )}
+          {/* Dark Mode Toggle */}
+          <DarkModeToggle />
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden relative">
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="text-white focus:outline-none"
+            className="dark:text-white focus:outline-none"
           >
             {navbarOpen ? (
               <XMarkIcon className="h-8 w-8" />
@@ -105,6 +108,10 @@ const Navbar = () => {
                       Login
                     </button>
                   )}
+                </li>
+                {/* Dark Mode Toggle for Mobile */}
+                <li>
+                  <DarkModeToggle />
                 </li>
               </ul>
             </div>
