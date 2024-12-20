@@ -33,6 +33,7 @@ const EmailSection = () => {
     <section
       className="relative py-24 px-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-[#121212] dark:via-[#181818] dark:to-[#1E1E1E]"
       id="contact"
+
     >
       {/* Background Accents */}
       <div className="absolute h-96 w-96 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-700 via-transparent to-transparent rounded-full blur-2xl -z-10 top-1/3 left-10"></div>
@@ -44,6 +45,7 @@ const EmailSection = () => {
           <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">Let’s Connect</h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             I’m currently open to new opportunities and collaborations. Whether you have a project in mind, need advice, or just want to say hi, feel free to drop me a message. I’ll get back to you as soon as I can!
+
           </p>
 
           {/* Social Links */}
@@ -51,11 +53,13 @@ const EmailSection = () => {
             {/* GitHub Link */}
             <Link href="https://github.com" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
               <div className="flex items-center justify-center p-3 bg-gray-100 dark:bg-[#18191E] hover:bg-purple-500 rounded-full transition duration-300 cursor-pointer">
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   className="h-6 w-6 text-gray-800 dark:text-white"
+
                 >
                   <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.07 3.29 9.36 7.86 10.86.57.1.78-.25.78-.55v-2.08c-3.2.7-3.87-1.53-3.87-1.53-.52-1.32-1.27-1.67-1.27-1.67-1.03-.7.08-.68.08-.68 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.63 1.23 3.28.94.1-.73.4-1.23.72-1.51-2.55-.3-5.22-1.28-5.22-5.68 0-1.26.45-2.3 1.18-3.11-.12-.29-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.19.92-.26 1.92-.39 2.91-.39s1.99.13 2.91.39c2.21-1.5 3.18-1.19 3.18-1.19.63 1.6.23 2.79.11 3.08.73.81 1.18 1.85 1.18 3.11 0 4.41-2.68 5.37-5.23 5.67.41.36.77 1.07.77 2.15v3.18c0 .3.21.65.79.55A10.5 10.5 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z" />
                 </svg>
