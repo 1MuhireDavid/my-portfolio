@@ -5,8 +5,8 @@ import { signIn } from "next-auth/react";
 const LoginPage = () => {
   
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 text-white shadow-md rounded-lg px-8 py-6 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center dark:bg-gray-900">
+      <div className="dark:bg-gray-800 dark:text-white text-black shadow-md rounded-lg px-8 py-6 w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Welcome Back</h2>
         <p className="text-sm text-gray-400 text-center mb-6">
           Don&apos;t have an account?{" "}

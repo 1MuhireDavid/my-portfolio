@@ -7,17 +7,18 @@ import ProjectsSection from "../components/ProjectsSection";
 
 
 export default function page() {
+  
   return (
     <div className="">
-       <main className="flex min-h-screen flex-col bg-[#121212]">
+       <main className="flex min-h-screen flex-col dark:bg-[#121212]">
       <div className="container mt-24 mx-auto px-12 py-4">
         <Navbar />
         <HeroSection />
         <About />
         <ProjectsSection />
         <EmailSection />
-      </div>
       <Footer />
+      </div>
     </main>
     </div>
   );

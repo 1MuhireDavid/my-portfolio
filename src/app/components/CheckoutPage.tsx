@@ -90,7 +90,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
       >
         {!loading ? `Pay $${amount}` : "Processing..."}
       </button>
-    </form> 
+    </form>
   );
 };
 

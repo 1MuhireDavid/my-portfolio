@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-[#1A1A1A] via-[#181818] to-[#1A1A1A] text-white border-t border-[#33353F] py-6">
+    <footer className="dark:bg-gradient-to-r from-[#1A1A1A] via-[#181818] to-[#1A1A1A] text-white border-t border-[#33353F] py-2">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         {/* Branding Section */}
         <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-2xl font-bold">MUHIRE DAVID</h3>
+          <h3 className="text-2xl text-black dark:text-white font-bold">MUHIRE DAVID</h3>
           <p className="text-sm text-slate-400 mt-1">
             Full Stack Developer | Passionate Creator
           </p>
