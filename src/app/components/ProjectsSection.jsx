@@ -10,8 +10,8 @@ const projectsData = [
     description: "A clean and responsive React.js portfolio showcasing projects.",
     image: "/images/projects/1.jpg",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/example/react-portfolio",
-    previewUrl: "https://example.com/portfolio",
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ const projectsData = [
     description: "A full-stack e-commerce web application with payment integration.",
     image: "/images/projects/2.jpg",
     tag: ["All", "Web"],
-    gitUrl: "https://github.com/example/ecommerce-app",
-    previewUrl: "https://example.com/ecommerce",
+    gitUrl: "#",
+    previewUrl: "#",
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ const projectsData = [
     description: "A mobile app for managing tasks efficiently, built with React Native.",
     image: "/images/projects/3.jpg",
     tag: ["All", "Mobile"],
-    gitUrl: "https://github.com/example/task-manager",
-    previewUrl: "https://example.com/task-manager",
+    gitUrl: "#",
+    previewUrl: "#",
   },
 ];
 
