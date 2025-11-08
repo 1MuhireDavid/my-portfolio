@@ -53,8 +53,10 @@ const HeroSection = () => {
             <Link href="/contact">
               <ButtonsCard>Hire Me</ButtonsCard>
             </Link>
-            <Link href="/resume">
-              <ButtonsCard>Download CV</ButtonsCard>
+            <Link href="/david cv.pdf" passHref legacyBehavior>
+              <a download>
+                <ButtonsCard>Download CV</ButtonsCard>
+              </a>
             </Link>
           </div>
         </div>
@@ -70,7 +72,7 @@ const HeroSection = () => {
                 width={300}
                 height={300}
                 className="rounded-full"
-                style={{ height: '100%' }}
+                style={{ height: "100%" }}
               />
             </div>
           </div>

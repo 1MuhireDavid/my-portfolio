@@ -13,7 +13,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-4 my-4 md:my-0">
           <a
-            href="https://github.com"
+            href="https://github.com/1MuhireDavid"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-[#282828] hover:bg-purple-500 transition duration-300"
@@ -29,7 +29,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="www.linkedin.com/in/muhire-david-648939379"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full bg-[#282828] hover:bg-blue-500 transition duration-300"

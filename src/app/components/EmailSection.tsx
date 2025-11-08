@@ -44,16 +44,18 @@ const EmailSection = () => {
         <div className="z-10">
           <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">Let’s Connect</h2>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-            I’m currently open to new opportunities and collaborations. Whether you have a project in mind, need advice, or just want to say hi, feel free to drop me a message. I’ll get back to you as soon as I can!
-
+            I’m currently open to new opportunities and collaborations. Whether you have a 
+            project in mind, need advice, or just want to say hi, feel free to drop me a message.
+             I’ll get back to you as soon as I can!
           </p>
+          EMAIL: <strong>muhiredavid74@gmail.com</strong>
 
           {/* Social Links */}
           <div className="flex gap-6 mt-4 justify-center">
             {/* GitHub Link */}
 
              <Link
-              href="https://linkedin.com"
+              href="https://github.com/1MuhireDavid"
               aria-label="Github"
               target="_blank"
               rel="noopener noreferrer"
@@ -71,7 +73,7 @@ const EmailSection = () => {
               </div>
             </Link>
              <Link
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/muhire-david-648939379"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"

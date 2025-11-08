@@ -6,12 +6,12 @@ import ProjectTag from "./ProjectTag";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "A clean and responsive React.js portfolio showcasing projects.",
-    image: "/images/projects/1.jpg",
+    title: "MY LICENCE",
+    description: "A platform to help users prepare for their provisional driving license tests.",
+    image: "/images/projects/license.png",
     tag: ["All", "Web"],
     gitUrl: "#",
-    previewUrl: "#",
+    previewUrl: "https://mylicencefn.vercel.app/",
   },
   {
     id: 2,
@@ -20,16 +20,25 @@ const projectsData = [
     image: "/images/projects/2.jpg",
     tag: ["All", "Web"],
     gitUrl: "#",
-    previewUrl: "#",
+    previewUrl: "https://imc.rw/",
   },
   {
     id: 3,
-    title: "Mobile Task Manager",
-    description: "A mobile app for managing tasks efficiently, built with React Native.",
+    title: "Budget Tracker Mobile App",
+    description: "A mobile app for tracking expenses and managing budgets effectively.",
     image: "/images/projects/3.jpg",
     tag: ["All", "Mobile"],
     gitUrl: "#",
-    previewUrl: "#",
+    previewUrl: "https://expo.dev/artifacts/eas/oYPMwjCSCVqhGdYJT1JHx1.apk",
+  },
+  {
+    id: 4,
+    title: "IKIGEMBE MOVIES",
+    description: "A mobile app for discovering and watching movies.",
+    image: "/images/projects/3.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "#",
+    previewUrl: "https://www.figma.com/design/0WVcKU02P6e0CDkbjoskFH/IKIGEMBE-movie-website?node-id=0-1&p=f&t=vD7Y17jdLFvRs7Vu-0",
   },
 ];
 

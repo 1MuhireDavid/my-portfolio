@@ -20,11 +20,11 @@ const About = () => {
       content: (
         <ul className="list-disc pl-4 text-lg leading-relaxed">
           <li>Node.js</li>
-          <li>Express</li>
-          <li>Postgres</li>
-          <li>Sequelize</li>
-          <li>JavaScript</li>
-          <li>React</li>
+          <li>Django</li>
+          <li>React Js</li>
+          <li>Next Js</li>
+          <li>FIGMA</li>
+          <li>EXPO REACT</li>
         </ul>
       ),
     },
@@ -35,6 +35,7 @@ const About = () => {
         <ul className="list-disc pl-4 text-lg leading-relaxed">
           <li>University of Rwanda</li>
           <li>FreeCodeCamp</li>
+          <li>BAG RWANDA</li>
         </ul>
       ),
     },
@@ -43,8 +44,11 @@ const About = () => {
       id: "certifications",
       content: (
         <ul className="list-disc pl-4 text-lg leading-relaxed">
-          <li>FreeCodeCamp</li>
-          <li>IT Essentials</li>
+          <li>BSC (HONS) IN COMPUTER ENGINEERING: SOFTWARE ENGINEERING | 2025</li>
+          <li>BACKEND DEVELOPMENT AND APIs | 2024</li>
+          <li>JUNIOR SOFTWARE DEVELOPMENT PROGRAM | 2023</li>
+          <li>IT Essentials | 2021</li>
+          <li>INTRODUCTION TO NETWORKS | 2022</li>
         </ul>
       ),
     },
