@@ -5,7 +5,7 @@ const ProjectTag = ({ onClick, name, isSelected }) => {
       className={`px-4 py-2 text-lg font-medium rounded-full transition-colors duration-300 ${
         isSelected
           ? "bg-gradient-to-r from-purple-400 to-pink-600 text-white"
-          : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
       }`}
     >
       {name}

@@ -1,106 +1,100 @@
 "use client";
-import React, { useTransition, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import TabButton from "./TabButton";
+import ScrollReveal from "./ScrollReveal";
+import SectionHeading from "./SectionHeading";
+
+const QUICK_FACTS = [
+  { label: "Role", value: "Full-Stack Developer" },
+  { label: "Core Stack", value: "React · Next.js · Node.js" },
+  { label: "Currently Learning", value: "Spring Boot · AWS Cloud" },
+];
+
+const EDUCATION = [
+  { school: "University of Rwanda", detail: "BSc (Hons) Computer Engineering — Software Engineering, 2025" },
+  { school: "FreeCodeCamp", detail: "Backend Development and APIs" },
+  { school: "BAG Rwanda", detail: "Junior Software Development Program" },
+];
 
 const About = () => {
-  const [tab, setTab] = useState("skills");
-  const [, startTransition] = useTransition();
-
-  const handleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };
-
-  const TAB_DATA = [
-    {
-      title: "Skills",
-      id: "skills",
-      content: (
-        <ul className="list-disc pl-4 text-lg leading-relaxed">
-          <li>Node.js</li>
-          <li>Django</li>
-          <li>React Js</li>
-          <li>Next Js</li>
-          <li>FIGMA</li>
-          <li>EXPO REACT</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Education",
-      id: "education",
-      content: (
-        <ul className="list-disc pl-4 text-lg leading-relaxed">
-          <li>University of Rwanda</li>
-          <li>FreeCodeCamp</li>
-          <li>BAG RWANDA</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Certifications",
-      id: "certifications",
-      content: (
-        <ul className="list-disc pl-4 text-lg leading-relaxed">
-          <li>BSC (HONS) IN COMPUTER ENGINEERING: SOFTWARE ENGINEERING | 2025</li>
-          <li>BACKEND DEVELOPMENT AND APIs | 2024</li>
-          <li>JUNIOR SOFTWARE DEVELOPMENT PROGRAM | 2023</li>
-          <li>IT Essentials | 2021</li>
-          <li>INTRODUCTION TO NETWORKS | 2022</li>
-        </ul>
-      ),
-    },
-  ];
-
   return (
     <section className="dark:text-white dark:bg-[#121212]" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-12 px-6 xl:gap-16 sm:py-20 xl:px-20">
         {/* Image Section */}
-        <div className="relative overflow-hidden rounded-lg shadow-lg">
-          <Image
-            src="/images/about.jpg"
-            alt="About Me"
-            width={500}
-            height={500}
-            className="object-cover w-full h-auto hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+        <ScrollReveal variant="left" className="relative flex justify-center md:justify-start">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+            {/* Decorative glow ring */}
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 opacity-30 blur-2xl" />
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl ring-1 ring-purple-500/20">
+              <Image
+                src="/images/profile.png"
+                alt="Portrait of David Muhire"
+                fill
+                sizes="(max-width: 640px) 16rem, 20rem"
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                priority
+              />
+            </div>
+            {/* Floating badge */}
+            <div className="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl bg-white dark:bg-[#181818] border border-gray-200 dark:border-gray-700 shadow-xl px-4 py-3">
+              <p className="text-xs text-gray-500 dark:text-gray-400">Open to</p>
+              <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
+                New Opportunities
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
 
         {/* Content Section */}
-        <div className="mt-8 md:mt-0 flex flex-col h-full">
-          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
-            About Me
-          </h2>
+        <ScrollReveal variant="right" delay={0.15} className="mt-12 md:mt-0 flex flex-col h-full">
+          <SectionHeading title="About Me" className="mb-4" />
           <p className="text-base md:text-lg leading-relaxed dark:text-gray-300">
-            I am a full-stack web developer passionate about creating
-            interactive and responsive web applications. I specialize in modern
-            web technologies like JavaScript, React, Node.js, PostgreSQL, and
-            more. I love collaborating with others and continuously strive to
-            expand my knowledge and skills.
+            I&apos;m a full-stack developer who enjoys turning ambiguous problems into
+            clean, reliable software. My day-to-day toolkit is React, Next.js, and
+            Node.js, and I&apos;ve shipped everything from e-commerce platforms to
+            mobile apps used by real customers. What keeps me in this field is the
+            feedback loop — writing something, watching it work, then making it
+            better.
+          </p>
+          <p className="mt-4 text-base md:text-lg leading-relaxed dark:text-gray-300">
+            Right now I&apos;m deepening my backend range with Spring Boot and
+            building toward AWS Cloud certifications, so I can design systems that
+            hold up in production, not just in a demo. I care about clean
+            architecture, performance, and the kind of user experience that doesn&apos;t
+            need an explanation.
           </p>
 
-          {/* Tabs Section */}
-          <div className="flex flex-row flex-wrap justify-start mt-8 space-x-4">
-            {TAB_DATA.map((tabData) => (
-              <TabButton
-                key={tabData.id}
-                selectTab={() => handleTabChange(tabData.id)}
-                active={tab === tabData.id}
+          {/* Quick facts */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {QUICK_FACTS.map((fact) => (
+              <div
+                key={fact.label}
+                className="rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-[#181818] px-4 py-3"
               >
-                {tabData.title}
-              </TabButton>
+                <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-500">
+                  {fact.label}
+                </p>
+                <p className="text-sm font-medium mt-1 dark:text-gray-200">{fact.value}</p>
+              </div>
             ))}
           </div>
 
-          {/* Tab Content Section */}
-          <div
-            className="mt-8 p-4 rounded-lg border border-gray-700 dark:bg-[#181818] dark:text-gray-300 transition-all duration-500"
-          >
-            {TAB_DATA.find((t) => t.id === tab).content}
+          {/* Education */}
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-3">
+              Education
+            </h3>
+            <ul className="space-y-2">
+              {EDUCATION.map((item) => (
+                <li key={item.school} className="text-sm md:text-base dark:text-gray-300">
+                  <span className="font-semibold dark:text-white">{item.school}</span>
+                  {" — "}
+                  {item.detail}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

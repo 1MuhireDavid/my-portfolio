@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import ScrollReveal from "./ScrollReveal";
+import SectionHeading from "./SectionHeading";
 
 const EmailSection = () => {
   const [loading, setLoading] = useState(false);
@@ -41,8 +43,8 @@ const EmailSection = () => {
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         {/* Left Section */}
-        <div className="z-10">
-          <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">Let’s Connect</h2>
+        <ScrollReveal variant="left" className="z-10">
+          <SectionHeading title="Let’s Connect" className="mb-4" />
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
             I’m currently open to new opportunities and collaborations. Whether you have a 
             project in mind, need advice, or just want to say hi, feel free to drop me a message.
@@ -73,7 +75,7 @@ const EmailSection = () => {
               </div>
             </Link>
              <Link
-              href="www.linkedin.com/in/muhire-david-648939379"
+              href="https://www.linkedin.com/in/muhire-david-648939379"
               aria-label="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,10 +92,14 @@ const EmailSection = () => {
               </div>
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Right Section */}
-        <div className="z-10 bg-gray-100 dark:bg-[#18191E] rounded-lg shadow-lg p-8">
+        <ScrollReveal
+          variant="right"
+          delay={0.15}
+          className="z-10 bg-gray-100 dark:bg-[#18191E] rounded-lg shadow-lg p-8"
+        >
           <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -153,7 +159,7 @@ const EmailSection = () => {
               {!loading ? "Send your email" : "Processing..."}
             </button>
           </form>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
