@@ -33,9 +33,8 @@ const EmailSection = () => {
 
   return (
     <section
-      className="relative py-24 px-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-[#121212] dark:via-[#181818] dark:to-[#1E1E1E]"
+      className="relative overflow-hidden py-24 px-6 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-[#121212] dark:via-[#181818] dark:to-[#1E1E1E]"
       id="contact"
-
     >
       {/* Background Accents */}
       <div className="absolute h-96 w-96 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-700 via-transparent to-transparent rounded-full blur-2xl -z-10 top-1/3 left-10"></div>

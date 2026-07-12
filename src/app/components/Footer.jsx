@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         {/* Quick links */}
-        <nav aria-label="Footer navigation" className="flex gap-6 justify-center">
+        <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-6 gap-y-2 justify-center px-4">
           {footerLinks.map((link) => (
             <Link
               key={link.path}
